@@ -49,7 +49,17 @@ exampleBookCollection.push(createBook('To Kill a Mockingbird', 'Harper Lee'));
 
 exampleBookCollection.forEach(book => book.showDetails());
 
+
 // TODO: Now, you try building your own book collection with different books!
+console.log("\nBonus 1")
+let bookCollection = [];
+bookCollection.push(createBook("Big Sur", "Jack Kerouac"));
+bookCollection.push(createBook("The Vagabond", "Colette"));
+bookCollection.push(createBook("The Hunchback of Notre Dame", "Victor Hugo"));
+
+bookCollection.forEach(book => book.showDetails());
+
+console.table(bookCollection); // just because I like tables :-)
 
 
 // EXERCISE 2: Managing a Task List
@@ -66,6 +76,13 @@ exampleTaskList.push(createTask('Call the bank', '2024-09-01'));
 exampleTaskList.forEach(task => task.completeTask());
 
 // TODO: Now, you try building your own task list and marking each task as completed!
+console.log("\nBonus 2")
+let taskList = [];
+taskList.push(createTask('Take cat to vet', '8-20-2024'));
+taskList.push(createTask('Plan vacation', '8-20-2024'));
+taskList.push(createTask('Go to yoga', '8-21-2024'));
+
+taskList.forEach(task => task.completeTask());
 
 
 // EXERCISE 3: Updating Book Titles
@@ -74,6 +91,7 @@ exampleTaskList.forEach(task => task.completeTask());
 // Then, use the `forEach` function to update the title of each book by adding " - Second Edition" to the end of the title.
 
 // EXAMPLE:
+console.log("\nexampleLibrary")
 const exampleLibrary = [];
 exampleLibrary.push(createBook('The Great Gatsby', 'F. Scott Fitzgerald'));
 exampleLibrary.push(createBook('Brave New World', 'Aldous Huxley'));
@@ -85,6 +103,17 @@ exampleLibrary.forEach(book => {
 });
 
 // TODO: Now, you try updating the titles of your own library!
+console.log("\nBonus 3")
+let smallLibrary = [];
+smallLibrary.push(createBook('Bateau Ivre', 'Arthur Rimbaud'));
+smallLibrary.push(createBook('Little Birds', 'Anais Nin'));
+smallLibrary.push(createBook('Fleurs du Mal', 'Charles Baudelaire'));
+
+smallLibrary.forEach(book => {
+  book.title += ' - Second Edition';
+  book.showDetails(); // Showing the updated title
+});
+console.table(smallLibrary); // just because I like tables :-)
 
 
 // EXERCISE 4: Rescheduling Tasks
@@ -106,7 +135,18 @@ exampleTaskList2.forEach(task => {
 });
 
 // TODO: Now, you try rescheduling your own tasks!
+console.log("\nBonus 4")
+let taskList2 = [];
+taskList2.push(createTask('Wash car', '8-20-2024'));
+taskList2.push(createTask('Take out trash', '8-20-2024'));
+taskList2.push(createTask('Water garden', '8-21-2024'));
 
+taskList2.forEach(task => {
+  let oldDate = new Date(task.dueDate);
+  let newDate = new Date(oldDate.setDate(oldDate.getDate() + 2));
+  task.dueDate = newDate.toISOString().split('T') [0];
+  console.log(`New due date for "${task.description}": ${task.dueDate}`);
+});
 
 // EXERCISE 5: Counting Completed Tasks
 // INSTRUCTIONS: Create an empty array called `taskList`.
@@ -114,6 +154,7 @@ exampleTaskList2.forEach(task => {
 // Use the `forEach` function to mark only 2 tasks as completed. Then, use another `forEach` function to count how many tasks have been completed.
 
 // EXAMPLE:
+console.log("\nexampleTaskList3")
 const exampleTaskList3 = [];
 exampleTaskList3.push(createTask('Clean the house', '2024-09-15'));
 exampleTaskList3.push(createTask('Pay electricity bill', '2024-09-16'));
@@ -131,6 +172,23 @@ exampleTaskList3.forEach(task => {
 console.log(`Number of completed tasks: ${completedCount}`);
 
 // TODO: Now, you try counting the completed tasks in your own task list!
+console.log("\nBonus 5")
+let taskList3 = [];
+taskList3.push(createTask('Do laundry', '2024-09-15'));
+taskList3.push(createTask('Take out recycling', '2024-09-16'));
+taskList3.push(createTask('Frame photographs', '2024-09-17'));
+
+taskList3[0].completeTask(); 
+taskList3[2].completeTask(); 
+
+let completedCount1 = 0;
+taskList3.forEach(task => {
+  if (task.completed) {
+      completedCount1++;
+  }
+});
+console.log(`Number of completed tasks: ${completedCount1}`);
+
 
 
 // Great job! You've completed the exercises.
