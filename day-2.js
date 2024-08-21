@@ -18,9 +18,6 @@ let state = {}
     console.log('zipCode:', state.zipCode);
 
 
-
-
-
 // EXERCISE 1: Updating Basic Information
 // INSTRUCTIONS: Add properties `name`, `email`, and `zipCode` to the `state` object and assign them appropriate values.
 // Then, log the entire `state` object to the console using `console.log` and `console.table`.
@@ -93,7 +90,7 @@ console.log('\nToDo3')
     console.table(state.favoriteMovies);
     
     for (let i = 0; i < state.favoriteMovies.length; i++) {
-             console.log(`Movie ${i + 1}:`, state.favoriteMovies[i]);
+        console.log(`Movie ${i + 1}:`, state.favoriteMovies[i]);
 }
 
 
