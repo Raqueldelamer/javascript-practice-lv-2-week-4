@@ -19,10 +19,10 @@ exampleBooks.push({ title: 'Moby Dick', author: 'Herman Melville' });
 function aggregateBooks(acc, book) {
   return acc + book.title + ", ";
 }
-
 // reduce take two arguments: a function and the starting value for acc.
 const bookTitles = exampleBooks.reduce(aggregateBooks, '');
 console.log('Book Titles:', bookTitles);
+
 
 // EXAMPLE 2: Aggregating Country Names using `reduce`
 const exampleCountries = [];
@@ -33,55 +33,81 @@ exampleCountries.push({ name: 'Germany', population: 83783942 });
 // the callback is often defined as an arrow function for convenience and pass directly to reduce.
 const countryNames = exampleCountries.reduce((acc, country, index) => {
     // Note: you may add an optional comma using the ? : ternary operator
-    return acc + country.name + (index < exampleCountries.length - 1 ? ', ' : '');
+    return acc + country.name + (index < exampleCountries.length - 1 ? ", " : '');
 }, '');
 console.log('Country Names:', countryNames);
+
+const countryPopulation = exampleCountries.reduce((acc, country, index) => {
+  // Note: you may add an optional comma using the ? : ternary operator
+  return acc + country.population + (index < exampleCountries.length - 1 ? ', ' : '');
+}, '');
+console.log('Country Population:', countryPopulation);
 
 // EXERCISE 1: Aggregating First Names
 // INSTRUCTIONS: Use the `reduce` method to aggregate all the `firstName` values into a single string, separated by commas.
 // BONUS: suppress the comma on the last item
 // Log the resulting string to the console.
+console.log("\n Bonus 1")
 
 const people = [];
-people.push({ firstName: 'John', lastName: 'Doe' });
-people.push({ firstName: 'Jane', lastName: 'Smith' });
-people.push({ firstName: 'Emily', lastName: 'Johnson' });
+people.push({ firstName:' John' , lastName: 'Doe' });
+people.push({ firstName:' Jane' , lastName: 'Smith' });
+people.push({ firstName:' Emily' , lastName: 'Johnson' });
 
 // TODO: Write your code here to aggregate the first names from the `people` array using `reduce`.
+const peopleList = people.reduce((acc, people, index) => {
 
+  return acc + people.firstName + (index < people.length - 1 ? ', ' : '');
+}, '');
+console.log('First Name List:' , peopleList);
 
 // EXERCISE 2: Aggregating Last Names
 // INSTRUCTIONS: Use the `reduce` method to aggregate all the `lastName` values into a single string, separated by commas.
 // Log the resulting string to the console.
-
+console.log("\n Bonus 2")
 const employees = [];
 employees.push({ firstName: 'Alice', lastName: 'Brown' });
 employees.push({ firstName: 'Bob', lastName: 'White' });
 employees.push({ firstName: 'Charlie', lastName: 'Green' });
 
 // TODO: Write your code here to aggregate the last names from the `employees` array using `reduce`.
+const employeeList = employees.reduce((acc, employee, index) => {
+  // Note: you may add an optional comma using the ? : ternary operator
+  return acc + employee.lastName + (index < employees.length - 1 ? ', ' : '');
+}, '');
+console.log('Employee Last Name List:', employeeList);
 
 
 // EXERCISE 3: Aggregating Product Names
 // INSTRUCTIONS: Use the `reduce` method to aggregate all the `productName` values into a single string, separated by commas.
 // Log the resulting string to the console.
-
+console.log("\n Bonus 3")
 const products = [];
 products.push({ productName: 'Laptop', price: 1000 });
 products.push({ productName: 'Smartphone', price: 800 });
 products.push({ productName: 'Tablet', price: 600 });
 
 // TODO: Write your code here to aggregate the product names from the `products` array using `reduce`.
+const productList = products.reduce((acc, product, index) => {
+  // Note: you may add an optional comma using the ? : ternary operator
+  return acc + product.productName + (index < products.length - 1 ? ', ' : '');
+}, '');
+console.log('Product List:', productList);
 
 
 // EXERCISE 4: Aggregating Task Descriptions
 // INSTRUCTIONS: Use the `reduce` method to aggregate all the `description` values into a single string, separated by commas.
-// Log the resulting string to the console.
-
+console.log("\n Bonus 4")
 const tasks = [];
 tasks.push({ description: 'Complete assignment', dueDate: '2024-08-20' });
 tasks.push({ description: 'Attend meeting', dueDate: '2024-08-21' });
 tasks.push({ description: 'Submit report', dueDate: '2024-08-22' });
+
+const taskList = tasks.reduce((acc, task, index) => {
+  // Note: you may add an optional comma using the ? : ternary operator
+  return acc + task.description + (index < tasks.length - 1 ? ', ' : '');
+}, '');
+console.log('Task List:', taskList);
 
 // TODO: Write your code here to aggregate the task descriptions from the `tasks` array using `reduce`.
 
@@ -95,6 +121,19 @@ exampleAnimals.push({ species: 'Cat', sound: 'Meow' });
 exampleAnimals.push({ species: 'Cow', sound: 'Moo' });
 
 // TODO: Write your code here to aggregate the animal sounds from the `exampleAnimals` array using `reduce`.
+console.log("\n Bonus 5")
+const animalList = [];
+animalList.push({ species: 'Dog', sound: 'Bark' });
+animalList.push({ species: 'Cat', sound: 'Meow' });
+animalList.push({ species: 'Cow', sound: 'Moo' });
+animalList.push({ species: 'Crow', sound: 'Caw' });
+
+function aggregateList(acc, list) {
+  return acc + list.sound + ', ';
+}
+
+const animalSounds = animalList.reduce(aggregateList, '');
+console.log('Animal Sounds:', animalSounds);
 
 // INSTRUCTIONS: Great job! You've completed the exercises.
 // These exercises should have helped you practice using the `reduce` method to aggregate information from objects in arrays.
