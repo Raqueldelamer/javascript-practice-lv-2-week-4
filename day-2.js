@@ -18,6 +18,7 @@ let state = {}
     console.log('zipCode:', state.zipCode);
 
 
+
 // EXERCISE 1: Updating Basic Information
 // INSTRUCTIONS: Add properties `name`, `email`, and `zipCode` to the `state` object and assign them appropriate values.
 // Then, log the entire `state` object to the console using `console.log` and `console.table`.
