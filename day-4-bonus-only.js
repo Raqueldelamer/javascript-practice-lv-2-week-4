@@ -50,6 +50,15 @@ const discountedProducts = exampleProducts.map(product => product.applyDiscount(
 console.log('Discounted Products:', discountedProducts);
 
 // TODO: Now, you try applying discounts to your own list of products!
+console.log("\n Bonus 1")
+const products = [];
+products.push(createProduct('Leica', 900));
+products.push(createProduct('Lens', 800));
+products.push(createProduct('Tripod', 200));
+
+const discountProducts = products.map(product => product.applyDiscount(0.2));
+console.log('Discount Products:', discountProducts);
+
 
 
 // EXERCISE 2: Improving Student Grades
@@ -67,6 +76,14 @@ const improvedStudents = exampleStudents.map(student => student.improveGrade(5))
 console.log('Improved Students:', improvedStudents);
 
 // TODO: Now, you try improving the grades of your own students!
+console.log("\n Bonus 2")
+const students = [];
+students.push(createStudent('Mary', 90));
+students.push(createStudent('Nathan', 75));
+students.push(createStudent('Otto', 85));
+
+const improveStudents = students.map(student => student.improveGrade(5));
+console.log('Improved Students:', improveStudents);
 
 
 // EXERCISE 3: Formatting Product Names
@@ -84,6 +101,14 @@ const productNamesUpperCase = exampleProducts2.map(product => product.name.toUpp
 console.log('Product Names in Uppercase:', productNamesUpperCase);
 
 // TODO: Now, you try formatting the names of your own products!
+console.log("\n Bonus 3")
+const products2 = [];
+products2.push(createProduct('Leica', 900));
+products2.push(createProduct('Lens', 800));
+products2.push(createProduct('Tripod', 200));
+
+const productsNamesUpperCase = products2.map(product => product.name.toUpperCase());
+console.log('Product Names in Uppercase:', productsNamesUpperCase);
 
 
 // EXERCISE 4: Adjusting Student Grades
@@ -104,6 +129,17 @@ const adjustedGrades = exampleStudents2.map(student => {
 console.log('Adjusted Grades:', adjustedGrades);
 
 // TODO: Now, you try adjusting the grades of your own students!
+console.log("\n Bonus 4")
+const students2 = [];
+students2.push(createStudent('Mary', 90));
+students2.push(createStudent('Nathan', 75));
+students2.push(createStudent('Otto', 85));
+
+const adjustGrades = students2.map(student => {
+  student.grade -= 2;
+  return student.grade;
+});
+console.log('Adjusted Grades:', adjustGrades);
 
 
 // EXERCISE 5: Mapping Task Descriptions to Uppercase
@@ -112,16 +148,23 @@ console.log('Adjusted Grades:', adjustedGrades);
 // Then, use the `map` function to create a new array where each task description is converted to uppercase.
 
 // EXAMPLE:
-const exampleTasks = [];
-exampleTasks.push({ description: 'Write a report', dueDate: '2024-08-30' });
-exampleTasks.push({ description: 'Grocery shopping', dueDate: '2024-08-31' });
-exampleTasks.push({ description: 'Call the bank', dueDate: '2024-09-01' });
+// const exampleTasks = [];
+// exampleTasks.push({ description: 'Write a report', dueDate: '2024-08-30' });
+// exampleTasks.push({ description: 'Grocery shopping', dueDate: '2024-08-31' });
+// exampleTasks.push({ description: 'Call the bank', dueDate: '2024-09-01' });
 
-const uppercaseDescriptions = exampleTasks.map(task => task.description.toUpperCase());
-console.log('Uppercase Task Descriptions:', uppercaseDescriptions);
+// const uppercaseDescriptions = exampleTasks.map(task => task.description.toUpperCase());
+// console.log('Uppercase Task Descriptions:', uppercaseDescriptions);
 
 // TODO: Now, you try converting the descriptions of your own tasks to uppercase!
+console.log("\n Bonus 5")
+const tasks = [];
+tasks.push({ description: 'Complete Pet App', dueDate: '2024-08-25' });
+tasks.push({ description: 'Orpheo Vet Appt', dueDate: '2024-08-22' });
+tasks.push({ description: 'Pay Phone Bill', dueDate: '2024-08-26' });
 
+const upperCasedDescriptions = tasks.map(task => task.description.toUpperCase());
+console.log('Uppercase Task Descriptions:', upperCasedDescriptions);
 
 // Great job! You've completed the exercises.
 // The `map` function is a powerful tool in JavaScript, allowing you to transform data in a clean and efficient way.
